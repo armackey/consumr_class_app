@@ -11,7 +11,7 @@
 <h1>Test<small>test</small></h1>
 
 <section>
-  <ul id="gif-list"></ul>
+  <ul id="bowties-list"></ul>
 </section>
 
 </body>
@@ -21,14 +21,23 @@
 $(document).ready(function(){
   console.log('Dom Loaded');
 
-  $.getJSON( "https://www.reddit.com/r/fig.json", function(response, status, jqXHR){
+  $.getJSON( "https://www.reddit.com/r/gifs.json", function(response, status, jqXHR){
     console.log(response.data.children[0].data.media.oembed.url);
 
    
 
-    for( var i = 0; i < response.data.children.length; i++){
+    for( var i = 0; i < 5; i++){
       console.log(response.data.children[i].data.url);
+      addGif( $('#bowties-list'), response.data.children[i].data.url );
     };
+
+    function addGif(listElem, data) {
+    var url = response.data.children[i].data.url;
+
+    var gifHtml = '<li>';
+    gifHtml += '<img src="' + url + '" width="200px" height="200px">';
+    listElem.append(gifHtml);
+}
     // console.log(status);
     // console.log(jqXHR);
 
