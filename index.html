@@ -9,36 +9,44 @@
 </head>
 <body>
 <h1>Test<small>test</small></h1>
+
+<section>
+  <ul id="gif-list"></ul>
+</section>
+
 </body>
 
   <script>
 
-// $( document ).ready(function() {
-//     console.log('DOM loaded.');
-
-//     var request = $.ajax({
-//         dataType: 'json',
-//         type: 'GET',
-//         url: '/api/bowties',
-//         data: {}
-
-//     });
-
-//   });
-
 $(document).ready(function(){
   console.log('Dom Loaded');
 
-    var request = $.ajax({
-      dataType: 'json',
-      type: 'GET',
-      url: 'https://www.reddit.com/r/fig.json',
-      data: {}
+  $.getJSON( "https://www.reddit.com/r/fig.json", function(response, status, jqXHR){
+    console.log(response.data.children[0].data);
+    console.log(status);
+    console.log(jqXHR);
 
-    });
-    request.done( function( data ){
-      console.log( data );
-    });
+
+ });
+
+  // $.getJSON('https://www.reddit.com/r/fig.json', function( data ){
+  //   var items
+  // } )
+
+  //   var request = $.ajax({
+  //     dataType: 'json',
+  //     type: 'GET',
+  //     url: 'https://www.reddit.com/r/fig.json',
+  //     data: {}
+
+  //   });
+  //   request.done( function( data ){
+  //     console.log( data. );
+  //   });
 });
+
+ 
   </script>
+
+
 </html>
