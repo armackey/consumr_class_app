@@ -22,9 +22,9 @@ $(document).ready(function(){
   console.log('Dom Loaded');
 
   $.getJSON( "https://www.reddit.com/r/fig.json", function(response, status, jqXHR){
-    console.log(response.data.children[0].data);
-    console.log(status);
-    console.log(jqXHR);
+    console.log(response.data.children[0].data.media.oembed.url);
+    // console.log(status);
+    // console.log(jqXHR);
 
 
  });
