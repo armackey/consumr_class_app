@@ -28,6 +28,17 @@
 
 $(document).ready(function(){
   console.log('Dom Loaded');
+
+    var request = $.ajax({
+      dataType: 'json',
+      type: 'GET',
+      url: 'https://www.reddit.com/r/fig.json',
+      data: {}
+
+    });
+    request.done( function( data ){
+      console.log( data );
+    });
 });
   </script>
 </html>
